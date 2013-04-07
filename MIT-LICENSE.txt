@@ -1,24 +1,4 @@
-teaGUI-Lua
-==========
-# What is teaLifeCalc?
-
-It's a life calculator for accounting and pre-calculating salary,interest,cost,and inflation.
-
-Enjoy it!:)
-
-# How to Use It?
-
-Just GIT it,their all lua scripts.
-
-Use Lua to execute calcExample.lua (example file)
-
-Just read the code in calcExample.lua and lib/teaLifeCalc.lua,and you'll know how to use it
-
-# License
-
-It's released under MIT license.
-
-Copyright (C) 2013 John Teee Lee
+Copyright 2013 John Teee Lee
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
