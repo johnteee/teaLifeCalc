@@ -21,6 +21,15 @@ myCalc:setEvent( 5, "Salary Increased\nFirst child has been borned\nLife( three 
 
 myCalc:setEvent( 6, "Life( three people )" )
 
+myCalc:setSalary( 7, 100 ) -- Salary Increased
+myCalc:setCost( 7, 80 ) -- Second child has been borned & Life( four people )
+myCalc:setEvent( 7, "Salary Increased\nSecond child has been borned\nLife( four people )" )
+
+myCalc:setEvent( 8, "Life( four people )" )
+
+---------------------------------------------------------------
+myCalc:calc() -- Default Invest ROR ( average since 1871 to 1998 )
+
 myCalc:setROR( 1, 1.2 ) -- Invest ROR
 
 myCalc:calc()

@@ -11,7 +11,7 @@ local teaLifeCalc = Object:extend{
 	totalYear = 30, -- Total Years
 	defaultSalary = 60, -- Default Salary
 	defaultCost = 20, -- Default Cost
-	defaultROR = 1.44, -- Default Invest Rate of Return
+	defaultROR = 1.063, -- Default Invest Rate of Return ( average market index ROR, since 1871 to 1998 )
 	defaultInflation = 1.03, -- Default Inflation Rate
 	defaultEvent = "", -- Default Event
 	yearArray = nil, -- Records In Each Year
@@ -174,11 +174,25 @@ function teaLifeCalc:calc()
 		local monBalance = nowSalary - nowCost
 		local nowROR = self:getROR( currentYear )
 		local nowEvent = self:getEvent( currentYear )
+		local nowPurchasingPower
 		
 		totalAsset = totalAsset * nowROR + monBalance
 		
-		print( string.format( "Year:\t%d\tSalary:\t%d\tCost:\t%d\nBalance/mon:\t%d\tIn Account:\t%0.2f\n%s\n",
-			currentYear, nowSalary, nowCost, monBalance, totalAsset, nowEvent ) )
+		if totalInflation ~= 0 then
+			nowPurchasingPower = totalAsset / totalInflation
+		else
+			nowPurchasingPower = totalAsset
+		end
+		
+		local firstLine = string.format( "Year:\t%d\tSalary:\t%d\tCost:\t%d\tTotal Inflation:\t%0.2f", 
+			currentYear, nowSalary, nowCost, totalInflation )
+		local secondLine = string.format( "Balance/mon:\t%d\tTotal Asset:\t%0.2f",
+			monBalance, totalAsset )
+		local thirdLine = string.format( "Purchasing Power:\t%d",
+			nowPurchasingPower )
+		
+		print( string.format( "%s\n%s\n%s\n%s\n",
+			firstLine, secondLine, thirdLine, nowEvent ) )
 	end
 end
 

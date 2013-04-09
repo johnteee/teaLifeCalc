@@ -1,4 +1,4 @@
-teaGUI-Lua
+teaLifeCalc
 ==========
 # What is teaLifeCalc?
 
